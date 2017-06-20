@@ -15,6 +15,7 @@ alias gc="git commit -m"
 alias gpp="git pull; git push"
 alias gd="git diff"
 alias gds="git diff --staged"
+alias gap="git add -p ."
 
 alias vi="vim"
 
