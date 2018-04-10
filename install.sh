@@ -9,6 +9,7 @@ brew install wget
 brew install reattach-to-user-namespace
 brew install the_silver_searcher
 brew install autojump
+brew install leiningen
 
 if [ ! -f ~/.gitconfig.user ]; then
   printf "What is your GitHub username? > "
@@ -80,6 +81,16 @@ fi
 if [ ! -d ~/.vim/bundle/vundle ]; then
   echo "Cloning Vundle to ~/.vim"
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+
+if [ ! -f /etc/whois.conf ]; then
+  echo "Adding whois config"
+  ln -s ~/.dotfiles/whois.conf /etc/whois.conf
+fi
+
+echo "Setting up leiningen"
+if [ ! -d ~/.lein ]; then
+  ln -s ~/.dotfiles/lein ~/.lein
 fi
 
 echo "Installing plugins"
