@@ -115,3 +115,7 @@ inoremap <esc> <nop>
 
 " I keep hitting shift + K and it pukes all over vim, don't need it, remap it!
 noremap <S-k> <nop>
+
+" MacOS clipboard support
+vmap <C-x> :!pbcopy<CR>
+vmap <C-c> :w !pbcopy<CR><CR>
