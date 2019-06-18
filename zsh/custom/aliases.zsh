@@ -1,25 +1,28 @@
-# Rails aliases
-alias dbm="rake db:migrate"
-alias z="zeus"
-zroute() { zeus rake routes | ag $@ }
+# Shell aliases
+alias b="aid begin"
+alias dbm="rake db:migrate && RAILS_ENV=test rake db:migrate"
+alias l="ls -al"
+alias j=z # I'm used to autojump 'j' vs fasd 'z'
+alias less="less -r"
+alias sketch="magick $1 \( -clone 0 -negate -blur 0x5 \) \
+  -compose colordodge -composite -modulate 100,0,100 -auto-level $2"
+alias srync="rsync -vrazh"
+alias tk="tmux kill-session"
+alias tn="rvm . do tmuxinator"
+alias vim="nvim"
+alias work="cd ~/code/boundless && tn start boundless"
 
-alias ls="gls --color"
-alias sl="ls"
+# OS X apps
+alias bat="open -a 'Adobe Acrobat' $@"
+alias md="open -a Markoff $@"
 
-# Git aliases
-alias gs="git status"
-alias gl="git log"
-alias gsl="git stash list"
-alias gsp="git stash pop"
-alias gc="git commit -m"
-alias gpp="git pull; git push"
-alias gd="git diff"
-alias gds="git diff --staged"
-alias gap="git add -p ."
+pgrefresh() {
+  rm -fr /usr/local/var/postgres/postmaster.pid
+  brew services restart postgresql
+}
 
-alias vi="vim"
-
-ctags_refresh() {
-  ctags -R .
-  ctags -R -f ./.git/tags
+sslcert() {
+  echo | \
+    openssl s_client -showcerts -servername $1 -connect $1:443 2>/dev/null | \
+    openssl x509 -inform pem -noout -text
 }

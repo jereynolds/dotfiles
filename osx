@@ -1,3 +1,9 @@
+# Turbo key repeat
+# Set a blazingly fast keyboard repeat rate.
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false;
+defaults write -g InitialKeyRepeat -int 15; # Anything lower than 15 seems too fast.
+defaults write -g KeyRepeat -int 2; # You can go as low as 1, but that's too darn fast for me.
+
 # Gratuitously stolen from @mathiasbynens
 # https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 
@@ -86,6 +92,9 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Show all filename extensions in Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Show hidden files
+defaults write com.apple.finder AppleShowAllFiles -string "YES"
 
 # Show status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
@@ -247,3 +256,9 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Kill affected applications
 for app in Finder Dock Mail Safari iTunes iCal Address\ Book SystemUIServer; do killall "$app" > /dev/null 2>&1; done
 echo "OSX Hacks Done. Note that some of these changes require a logout/restart to take effect."
+
+# Allow text expansion
+defaults write -g WebAutomaticTextReplacementEnabled -bool true
+
+# Allow AAC codec for Bluetooth headphones
+defaults write bluetoothaudiod "Enable AAC codec" -bool true

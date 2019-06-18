@@ -31,3 +31,23 @@ Session.vim
 # SASS
 # ----------------------------------------------------------------------------------------------
 .sass-cache
+
+/TODO
+
+# Gtags
+GPATH
+GRTAGS
+GTAGS
+
+.dir-locals.el
+
+.#*
+
+tags.lock
+tags.temp
+tags
+.gutentag
+tags.files
+
+.tern-project
+.projectroot
