@@ -35,7 +35,6 @@ setopt extended_glob
 # =========== Plugins ============
 source $HOME/.zsh/vendor/antigen.zsh
 
-
 antigen bundle robbyrussell/oh-my-zsh plugins/fasd
 antigen bundle robbyrussell/oh-my-zsh plugins/git
 antigen bundle robbyrussell/oh-my-zsh plugins/nvm
