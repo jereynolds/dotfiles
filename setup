@@ -13,5 +13,4 @@ require_installer ruby
 require_installer tmux
 require_installer fonts
 require_installer neovim
-# require_installer spacemacs
 require_installer os-keys
