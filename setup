@@ -16,5 +16,3 @@ require_installer neovim
 # require_installer spacemacs
 require_installer backups
 require_installer os-keys
-require_installer audio
-require_installer personal
