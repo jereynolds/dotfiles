@@ -3,4 +3,6 @@
 source "${BASH_SOURCE%/*}/installers/shared.sh"
 
 require_installer package-manager
+require_installer devtools
+require_installer git
 
