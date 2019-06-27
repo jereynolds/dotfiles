@@ -9,3 +9,7 @@ function is_macos() {
 function is_linux() {
   [[ "$_current_os" == "Linux" ]]
 }
+
+function is_google_macos() {
+  [ -d "/Applications/gMacInformation.app" ]
+}

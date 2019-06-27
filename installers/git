@@ -26,10 +26,19 @@ function setup_git_dotfiles() {
   symlink_dotfile git/gitmessage ~/.gitmessage
 }
 
-dotheader "Setting up Git..."
+function install_git() {
+  if is_google_macos; then
+    echo "On Google MacOS, skipping git install..."
+  else
+    dotheader "Setting up Git..."
+    install_package "git"
+  fi
+}
 
-install_package "git"
+
 brew_install diff-so-fancy
+
+install_git
 
 setup_user_gitconfig
 setup_git_dotfiles
