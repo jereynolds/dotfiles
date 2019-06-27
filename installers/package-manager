@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+source "${BASH_SOURCE%/*}/shared.sh"
+
+if is_macos; then
+  if test ! $(which brew); then
+    echo "Installing homebrew"
+
+    ruby -e "$(curl -fsSL \
+      https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    brew update
+  fi
+
+  dotheader "Setting up Homebrew..."
+elif is_linux; then
+  dotheader "Setting up Aptitude..."
+
+  apt_install aptitude
+# Apt build
+
+buildtools=(
+  make
+  cmake
+  build-essential
+  libssl-dev
+  zlib1g-dev
+  libbz2-dev
+  libreadline-dev
+  libsqlite3-dev
+  wget
+  curl
+  llvm
+  libncurses5-dev
+  xz-utils
+  tk-dev
+)
+
+for package in "${buildtools[@]}"; do
+  apt_install "$package"
+done
+fi
+
