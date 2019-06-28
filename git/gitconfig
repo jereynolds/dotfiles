@@ -124,7 +124,6 @@
   autocrlf = false
   editor = nvim
   excludesfile = ~/.gitignore
-  pager = diff-so-fancy | less --tabs=4 -RFX
 [advice]
   statusHints = false
 [diff]

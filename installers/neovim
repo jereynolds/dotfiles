@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+source "${BASH_SOURCE%/*}/shared.sh"
+
+require_installer package-manager
+require_installer fonts
+#require_installer ruby
+#require_installer python
+#require_installer node
+
+function install_neovim_linux() {
+  if ! apt_is_installed "neovim"; then
+    sudo add-apt-repository -y ppa:neovim-ppa/stable
+    sudo apt-get -y update
+    apt_install neovim
+
+    sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+    sudo update-alternatives --config vi
+    sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+    sudo update-alternatives --config vim
+    sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+    sudo update-alternatives --config editor
+  fi
+}
+
+function install_neovim_mac() {
+  if ! brew_is_tapped "neovim/neovim"; then
+    brew_tap neovim/neovim
+  fi
+
+  brew_install neovim --HEAD
+}
+
+function install_neovim() {
+  if is_macos; then
+    install_neovim_mac
+  else
+    install_neovim_linux
+  fi
+}
+
+function setup_neovim_config() {
+  mkdir -p ~/.config
+  symlink_dotfile nvim ~/.config/nvim
+}
+
+function ensure_plugin_directory() {
+  mkdir -p ~/.local/share/nvim/plugged
+}
+
+function install_neovim_plugins() {
+  dotsay "@b@blue[[+ Installing nvim plugins]]"
+  #pyenv activate py2neovim
+  nvim +PlugInstall +qall
+}
+
+function install_tern() {
+  npm install -g tern
+}
+
+function install_vim_node_rpc() {
+  npm install -g vim-node-rpc
+}
+
+function install_ruby_neovim() {
+  rvm default do gem install neovim
+}
+
+function install_bash_language_server() {
+  npm install -g bash-language-server
+}
+
+function install_coc_plugins() {
+  gem install solargraph
+  nvim +"CocInstall coc-json coc-solargraph \
+    coc-css coc-html coc-syntax coc-snippets coc-tsserver coc-emmet"
+}
+
+dotheader "Setting up Neovim..."
+
+#install_bash_language_server
+#install_ruby_neovim
+install_neovim
+setup_neovim_config
+#install_tern
+#install_vim_node_rpc
+ensure_plugin_directory
+install_neovim_plugins
+#install_coc_plugins
