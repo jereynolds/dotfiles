@@ -13,3 +13,7 @@ function is_linux() {
 function is_google_macos() {
   [ -d "/Applications/gMacInformation.app" ]
 }
+
+function is_google_linux() {
+  [[ "$(uname -a)" =~ "corp.google.com" ]]
+}

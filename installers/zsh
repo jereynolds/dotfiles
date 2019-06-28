@@ -32,10 +32,22 @@ function update_shell_whitelist() {
 
 function chsh_zsh() {
   if [[ "$SHELL" != "$(zsh_binary)" ]]; then
+    local current_user=$USER
     dotsay "@b@blue[[Changing shell for $current_user...]]"
 
-    local current_user=$USER
-    sudo chsh -s $(zsh_binary) $current_user
+    if is_glinux; then
+      local corp_user="$current_user.corp"
+      prodaccess 2>&1 >/dev/null
+      local ganpati_output=$(ganpati2 user edit --id=$corp_user --corp_shell=$(zsh_binary) --approve_now=true 2>&1)
+
+      if [[ "$ganpati_output" =~ "Proposal proposes current state" ]]; then
+        dotsay "@b@blue[[Shell already set, no changes made.]]"
+      else
+        dotsay "@b@red[[Changed corp shell entry for $corp_user, machine reboot is required!]]"
+      fi
+    else
+      sudo chsh -s $(zsh_binary) $current_user
+    fi
   fi
 }
 
