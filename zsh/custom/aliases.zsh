@@ -1,4 +1,5 @@
 # Shell aliases
+alias ls="ls --color"
 alias b="aid begin"
 alias dbm="rake db:migrate && RAILS_ENV=test rake db:migrate"
 alias l="ls -al"
