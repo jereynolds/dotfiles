@@ -15,6 +15,7 @@ function install_tmux_plugins() {
 function setup_tmux_config() {
   symlink_dotfile tmux.conf ~/.tmux.conf
   symlink_dotfile tmux.osx.conf ~/.tmux.osx.conf
+  symlink_dotfile tmux.glinux.conf ~/.tmux.glinux.conf
   symlink_dotfile tmux ~/.tmux
 
   if [ ! -d ~/.tmux/plugins/tpm ]; then
