@@ -15,6 +15,9 @@ setopt AUTO_PUSHD
 # Allow extended matchers like ^file, etc
 set -o EXTENDED_GLOB
 
+# Hide the "incomplete line" indicator on program exit
+export PROMPT_EOL_MARK=''
+
 # ========= History settings =========
 if [ -z "$HISTFILE" ]; then
   HISTFILE=$HOME/.zsh_history
