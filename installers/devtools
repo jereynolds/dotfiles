@@ -6,14 +6,11 @@ require_installer package-manager
 
 dotheader "Setting up devtools..."
 
-brew_install fd
-brew_install coreutils
-
-brew_install ripgrep
-apt_install ripgrep
-
-install_package sl
+install_package ripgrep
 install_package wget
 
+# Hold osx's hand
+brew_install fd
+brew_install coreutils
 brew_install gnu-tar
 brew_install hub
