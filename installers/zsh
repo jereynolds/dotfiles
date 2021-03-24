@@ -72,18 +72,6 @@ function install_fasd() {
   install_package fasd
 }
 
-function setup_zsh_completions_repo() {
-  ! is_linux && return 1
-
-  if ! apt_is_installed "zsh-completions"; then
-    sudo sh -c "echo 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-completions/xUbuntu_20.10/ /' | sudo tee /etc/apt/sources.list.d/shells:zsh-users:zsh-completions.list"
-
-    curl -fsSL https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/xUbuntu_20.10/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_zsh-users_zsh-completions.gpg > /dev/null
-
-    sudo apt-get update
-  fi
-}
-
 function install_antigen() {
   local plugin_file=$HOME/.zsh/vendor/antigen.zsh
 
@@ -106,12 +94,9 @@ dotheader "Setting up ZSH..."
 
 brew_install neofetch
 install_base16_shell
-setup_zsh_completions_repo
-
 install_package zsh
-install_package zsh-completions
-
 install_fasd
+
 #install_fzf
 
 setup_zsh_symlinks
