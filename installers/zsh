@@ -35,7 +35,7 @@ function chsh_zsh() {
     local current_user=$USER
     dotsay "@b@blue[[Changing shell for $current_user...]]"
 
-    if is_glinux; then
+    if is_google_linux; then
       local corp_user="$current_user.corp"
       prodaccess 2>&1 >/dev/null
       local ganpati_output=$(ganpati2 user edit --id=$corp_user --corp_shell=$(zsh_binary) --approve_now=true 2>&1)
@@ -76,10 +76,9 @@ function setup_zsh_completions_repo() {
   ! is_linux && return 1
 
   if ! apt_is_installed "zsh-completions"; then
-    sudo sh -c "echo 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-completions/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/zsh-completions.list"
+    sudo sh -c "echo 'deb http://download.opensuse.org/repositories/shells:/zsh-users:/zsh-completions/xUbuntu_20.10/ /' | sudo tee /etc/apt/sources.list.d/shells:zsh-users:zsh-completions.list"
 
-    wget -nv https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/xUbuntu_16.04/Release.key -O /tmp/Release.key
-    sudo apt-key add - < /tmp/Release.key
+    curl -fsSL https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/xUbuntu_20.10/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/shells_zsh-users_zsh-completions.gpg > /dev/null
 
     sudo apt-get update
   fi
