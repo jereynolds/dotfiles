@@ -1,6 +1,7 @@
 " expand visual region
-map J <Plug>(expand_region_expand)
-map K <Plug>(expand_region_shrink)
+" disable these since I use J already
+" map J <Plug>(expand_region_expand)
+" map K <Plug>(expand_region_shrink)
 
 " vim-test
 nmap <silent> <leader>T :TestNearest<CR>
