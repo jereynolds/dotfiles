@@ -10,4 +10,5 @@ require_installer fonts
 require_installer zsh
 require_installer tmux
 require_installer neovim
+require_installer haskell
 require_installer ruby

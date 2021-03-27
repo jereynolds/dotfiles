@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+source "${BASH_SOURCE%/*}/shared.sh"
+
+require_installer package-manager
+
+install_package "ghc"
+install_package "cabal-install"
+install_package "haskell-stack"
