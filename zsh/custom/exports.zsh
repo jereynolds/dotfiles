@@ -46,3 +46,6 @@ export FREEZE_REPO="$RESTIC_REPOSITORY:/Freeze"
 if command -v yarn >/dev/null 2>&1; then
   export PATH="$PATH:`yarn global bin`"
 fi
+
+# RVM
+export PATH="$HOME/.rvm/bin:$PATH"

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+source "${BASH_SOURCE%/*}/shared.sh"
+
+require_installer package-manager
+
+dotheader "Setting up dev dependencies..."
+
+install_package libncurses5-dev
+install_package libncursesw5-dev
