@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+source "${BASH_SOURCE%/*}/shared.sh"
+
+dotheader "Setting up OS customizations"
+
+# Map CapsLock to CTRL on linux
+if is_linux; then
+  dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:ctrl_modifier']"
+fi
+
