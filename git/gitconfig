@@ -141,3 +141,5 @@
   singlekey = true
 [commit]
   template = ~/.gitmessage
+[init]
+	defaultBranch = main
