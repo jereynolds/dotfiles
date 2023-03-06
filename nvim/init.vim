@@ -76,6 +76,7 @@ set sidescroll=1
 
 let mapleader=","
 let g:mapleader=","
+let maplocalleader="\\"
 
 " =============== mouse =====================
 set mouse=n

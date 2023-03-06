@@ -68,15 +68,3 @@ TERM_TOKEN_COLORS = {
   change: "\e[44m",
   head: "\e[45m"
 }.freeze
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
