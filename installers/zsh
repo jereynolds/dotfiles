@@ -6,6 +6,7 @@ require_installer package-manager
 
 function setup_zsh_symlinks() {
   symlink_dotfile zshrc ~/.zshrc
+  symlink_dotfile zprofile ~/.zprofile
   symlink_dotfile zsh ~/.zsh
 }
 
