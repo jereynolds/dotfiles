@@ -8,6 +8,7 @@ let g:lmap.c = {
 
 let g:lmap.g = {
   \'name' : 'Git Menu',
+  \'b' : ['G blame',  'Git blame'],
   \'c' : ['Gcommit', 'Git Commit'],
   \'d' : ['Gdiff',   'Git diff'],
   \'p' : ['Gpull',   'Git Pull'],
