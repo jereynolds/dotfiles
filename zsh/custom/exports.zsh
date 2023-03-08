@@ -37,11 +37,6 @@ export PATH="$PATH:$HOME/.config/base16-shell"
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-# Restic/Backblaze
-export RESTIC_REPOSITORY="b2:dbalatero-backup"
-export SYNC_REPO="$RESTIC_REPOSITORY:/Sync"
-export FREEZE_REPO="$RESTIC_REPOSITORY:/Freeze"
-
 # Yarn
 if command -v yarn >/dev/null 2>&1; then
   export PATH="$PATH:`yarn global bin`"

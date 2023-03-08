@@ -120,6 +120,7 @@
   default = current
 [pull]
   ff = only
+	rebase = true
 [core]
   autocrlf = false
   editor = nvim

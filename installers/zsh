@@ -10,15 +10,7 @@ function setup_zsh_symlinks() {
 }
 
 function zsh_binary() {
-  if is_linux; then
-    echo /bin/zsh
-  elif is_macos; then
-    if is_google_macos; then
-      echo /bin/zsh
-    else
-      echo /usr/local/bin/zsh
-    fi
-  fi
+  /bin/zsh
 }
 
 function update_shell_whitelist() {
