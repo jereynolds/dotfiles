@@ -6,6 +6,7 @@ require_installer package-manager
 
 dotheader "Setting up devtools..."
 
+install_package libpq # postgres tools like psql and pg_dump
 install_package ripgrep
 install_package wget
 
