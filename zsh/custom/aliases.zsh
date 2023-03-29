@@ -6,6 +6,7 @@ alias srync="rsync -vrazh"
 alias tk="tmux kill-session"
 alias tn="rvm . do tmuxinator"
 alias vim="nvim"
+alias vi="nvim ."
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

@@ -7,22 +7,23 @@ POWERLEVEL9K_VI_INSERT_MODE_STRING=""
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="[N]"
 POWERLEVEL9K_MODE="nerdfont-complete"
 
-POWERLEVEL9K_TIME_FORMAT="\UF43A %D{%I:%M  \UF133  %m.%d.%y}"
+POWERLEVEL9K_TIME_FORMAT="%D{%m/%d/%y \UF133 %H:%M:%S}"
 
 # Removed item from this array:
 # vcs
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   os_icon
   dir
+  vcs
   status
   vi_mode
 )
 
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   root_indicator
+  background_jobs
   command_execution_time
-  nvm
-  rvm
+  time
 )
 
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
