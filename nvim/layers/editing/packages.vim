@@ -17,3 +17,4 @@ Plug 'kshenoy/vim-signature'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'mattn/emmet-vim'
 Plug 'Olical/conjure'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }

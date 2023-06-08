@@ -23,6 +23,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   root_indicator
   background_jobs
   command_execution_time
+  #asdf
   time
 )
 

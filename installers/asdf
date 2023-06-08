@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+source "${BASH_SOURCE%/*}/shared.sh"
+
+require_installer package-manager
+
+function setup_asdf_symlinks() {
+  symlink_dotfile tool-versions ~/.tool-versions
+}
+
+dotheader "Setting up asdf..."
+
+setup_asdf_symlinks
