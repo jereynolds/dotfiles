@@ -62,8 +62,3 @@ for file in $HOME/.zsh/custom/**/*.zsh
 do
   source $file
 done
-
-for file in $HOME/.zsh/secrets/**/*.zsh
-do
-  source $file
-done
