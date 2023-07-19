@@ -38,7 +38,6 @@ setopt extended_glob
 # =========== Plugins ============
 source $HOME/.zsh/vendor/antigen.zsh
 
-antigen bundle robbyrussell/oh-my-zsh plugins/fasd
 antigen bundle robbyrussell/oh-my-zsh plugins/git
 # antigen bundle robbyrussell/oh-my-zsh plugins/pyenv
 antigen bundle robbyrussell/oh-my-zsh plugins/vi-mode
@@ -46,7 +45,6 @@ antigen bundle robbyrussell/oh-my-zsh plugins/zsh_reload
 
 antigen bundle dbalatero/fzf-git
 antigen bundle chriskempson/base16-shell
-antigen bundle wookayin/fzf-fasd
 antigen bundle zsh-users/zsh-completions
 antigen bundle zdharma/fast-syntax-highlighting
 

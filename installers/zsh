@@ -54,17 +54,6 @@ function install_fzf() {
   fi
 }
 
-function install_fasd() {
-  if is_linux; then
-    if ! command_exists "fasd"; then
-      sudo add-apt-repository ppa:aacebedo/fasd
-      sudo apt-get update
-    fi
-  fi
-
-  install_package fasd
-}
-
 function install_antigen() {
   local plugin_file=$HOME/.zsh/vendor/antigen.zsh
 
@@ -88,9 +77,8 @@ dotheader "Setting up ZSH..."
 brew_install neofetch
 install_base16_shell
 install_package zsh
-install_fasd
 
-#install_fzf
+install_fzf
 
 setup_zsh_symlinks
 install_antigen
