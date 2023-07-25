@@ -44,3 +44,7 @@ fi
 
 # RVM
 export PATH="$HOME/.rvm/bin:$PATH"
+
+# Golang
+export GOPATH="$HOME/.local/go"
+export PATH="$PATH:$GOPATH/bin"

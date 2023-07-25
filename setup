@@ -16,3 +16,4 @@ require_installer neovim
 require_installer haskell
 require_installer ruby
 require_installer clojure
+require_installer go
