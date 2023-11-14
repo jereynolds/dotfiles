@@ -6,12 +6,29 @@ require_installer package-manager
 
 dotheader "Setting up devtools..."
 
+function ensure_local_bin_directory() {
+  mkdir -p ~/.local/bin
+}
+
+function install_fd_find() {
+  if is_macos; then
+    brew_install fd
+  fi
+
+  if is_linux; then
+    apt_install fd-find
+    ensure_local_bin_directory
+    ln -s $(which fdfind) ~/.local/bin/fd
+  fi
+}
+
 install_package libpq # postgres tools like psql and pg_dump
 install_package ripgrep
 install_package wget
 
 # Hold osx's hand
-brew_install fd
 brew_install coreutils
 brew_install gnu-tar
 brew_install hub
+
+install_fd_find
