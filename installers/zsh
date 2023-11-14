@@ -11,7 +11,7 @@ function setup_zsh_symlinks() {
 }
 
 function zsh_binary() {
-  /bin/zsh
+  echo "/bin/zsh"
 }
 
 function update_shell_whitelist() {
